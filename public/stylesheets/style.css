@@ -1,28 +1,34 @@
 * {
     box-sizing: border-box;
   }
+
+  :root {
+    --main: #22a398;
+    --secondary: #2fddcf;
+    --tertiary: #BBD8B3;
+  }
   
   body, html {
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     color: #333;
   }
   
   a {
     text-decoration: none;
-    color: #225ca3;
+    color: var(--main);
     font-weight: bold;
     transition: color .1s;
   }
   
   a:hover {
-    color: #3486eb;
+    color: var(--secondary);
   }
   
   button {
-    background-color: #225ca3;
+    background-color: var(--main);
     border: 0;
     padding: 1%;
     color: white;
@@ -33,7 +39,7 @@
   }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: var(--secondary)
   }
   
   .post-list {
@@ -49,7 +55,7 @@
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid var(--secondary);
   }
   
   textarea {
@@ -83,7 +89,7 @@
   }
   
   header h1 {
-    font-size: 1em;
+    font-size: 2em;
   }
   
   main {
@@ -97,7 +103,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: var(--main);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -106,7 +112,7 @@
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: var(--secondary);
   }
   
   .delete-post-btn {
@@ -118,8 +124,10 @@
   }
   
   .post {
+    padding-bottom: 2%;
     margin-bottom: 2%;
     line-height: 150%;
+    border-bottom: 1px solid #ccc;
   }
   
   .post .title span {
@@ -133,15 +141,6 @@
     margin: -1.5% 0 2% 0;
   }
   
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
   .comment-form {
     margin-bottom: 5%;
   }
@@ -152,7 +151,7 @@
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #d4ffe7;
   }
   
   .comment .meta {
