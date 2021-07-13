@@ -3,7 +3,7 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Comment.findAll()
+    Comment.findAll({})
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
             console.log(err);
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create({
-            comment_text: req.body.comment_text,
+            comment_body: req.body.comment_body,
             post_id: req.body.post_id,
             user_id: req.session.user_id
         })
@@ -30,7 +30,7 @@ router.put('/:id', withAuth, (req, res) => {
     if (req.session) {
         Comment.update(
             {
-                comment_text: req.body.comment_text
+                comment_body: req.body.comment_body
             },
             {
                 where: {

@@ -17,7 +17,8 @@ async function signupFormHandler(event) {
         });
 
         if (response.ok) {
-            console.log('success')
+            window.alert('User was created; please sign in');
+            document.location.reload();
         } else {
             alert(response.statusText);
         }
